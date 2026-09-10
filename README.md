@@ -50,9 +50,3 @@ Do not commit your real `.env` file or credentials to GitHub.
 
 - [README Deutsch](readme/README-de.md)
 - [README English](readme/README-en.md)
-
-## Releases
-
-The package is prepared for publishing to PyPI through GitHub Actions and PyPI Trusted Publishing. A published GitHub Release triggers the PyPI publishing workflow.
-
-Before creating a new release, increase the version in `pyproject.toml`, for example from `0.1.2` to `0.1.3`.
