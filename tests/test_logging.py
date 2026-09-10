@@ -1,4 +1,4 @@
-import os
+import logging
 from pathlib import Path
 import sys
 import unittest
@@ -10,11 +10,15 @@ class LoggingTests(unittest.TestCase):
         project_root = Path(__file__).resolve().parents[1]
         script = project_root / "sample" / "example.py"
 
-        with patch.dict(os.environ, {"CHECK_SEPA_COMBINED_LOG": "1"}):
+        with (
+            patch.object(Path, "mkdir"),
+            patch.object(logging, "FileHandler"),
+            patch.object(logging, "StreamHandler"),
+            patch.object(logging, "basicConfig"),
+        ):
             from lippertzpy import logging as package_logging
 
         with (
-            patch.dict(os.environ, {}, clear=True),
             patch.object(sys, "argv", [str(script)]),
             patch.object(Path, "mkdir") as mkdir,
             patch.object(package_logging.logging, "FileHandler"),
