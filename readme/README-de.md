@@ -12,13 +12,21 @@ Eine kleine Python-Bibliothek für die Jifeline Partner API und lokales Logging.
 Download den Code und dann:
 
 ```powershell
-pip install lippertzpy
+py -m pip install .
 ```
-or
+oder
 
 ```powershell
-pip install git+https://github.com/R0g3rT/lippertzPy.git
+py -m pip install git+https://github.com/R0g3rT/lippertzPy.git
 ```
+
+Für die Entwicklung:
+
+```powershell
+py -m pip install -e .
+```
+
+Deinstallation:
 
 ```powershell
 py -m pip uninstall lippertzpy

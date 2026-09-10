@@ -12,14 +12,21 @@ A small Python library for the Jifeline Partner API and local logging.
 Download the code, then:
 
 ```powershell
-pip install lippertzpy
+py -m pip install .
 ```
 or
 
 ```powershell
-pip install git+https://github.com/R0g3rT/lippertzPy.git
+py -m pip install git+https://github.com/R0g3rT/lippertzPy.git
 ```
 
+For development:
+
+```powershell
+py -m pip install -e .
+```
+
+To uninstall:
 
 ```powershell
 py -m pip uninstall lippertzpy
@@ -42,7 +49,6 @@ from lippertzpy import get, post, write_log
 write_log("API client started")
 result = get("endpoint")
 result = post("endpoint", {"data": data})
-
 ```
 
 Supported API functions are `get`, `post`, `put`, and `delete`.
