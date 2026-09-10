@@ -17,6 +17,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install package
-        run: python -m pip install -e .
+        run: python pip install lippertzPy
       - name: Run tests
-        run: python -m unittest discover -s tests
+        run: python unittest discover -s tests
