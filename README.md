@@ -31,17 +31,18 @@ python -m pip install -e .
 ## Usage
 
 ```python
-from lippertzpy import get, post, put, delete, write_log
+from lippertzpy import get, post, write_log
 
-write_log("API client started")
+write_log("API client gestartet")
 result = get("endpoint")
+result = post("endpoint", {"data": data})
 ```
 
 The package exports the Jifeline API helpers `get`, `post`, `put`, `delete` and `get_access_token`, as well as the logging helpers `setup_logging` and `write_log`.
 
 ## Configuration
 
-Copy `.env.example` to the directory of the script that uses the library and enter the required API credentials there.
+Copy `.env.example` to `your-script-folder\.env` or create a file `.env` in your directory and enter your credentials.
 
 Do not commit your real `.env` file or credentials to GitHub.
 

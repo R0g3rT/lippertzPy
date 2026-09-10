@@ -34,7 +34,7 @@ py -m pip uninstall lippertzpy
 
 ## Konfiguration
 
-Kopiere `.env.example` nach `your-script-folder\.env` und trage deine Zugangsdaten ein:
+Kopiere `.env.example` nach `your-script-folder\.env` oder erstellen Sie die Datei `.env` in Ihrem Verzeichnis und trage deine Zugangsdaten ein:
 
 ```dotenv
 client_id=your_client_id
