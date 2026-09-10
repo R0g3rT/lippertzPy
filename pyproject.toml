@@ -8,10 +8,26 @@ version = "0.1.2"
 description = "Python helpers for the Jifeline partner API and logging"
 readme = "README.md"
 requires-python = ">=3.10"
+authors = [
+    { name = "Robert Lippert" }
+]
+keywords = ["jifeline", "api", "logging", "automation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
 dependencies = [
     "python-dotenv>=1.0",
     "requests>=2.31",
 ]
+
+[project.urls]
+Homepage = "https://github.com/R0g3rT/lippertzPy"
+Repository = "https://github.com/R0g3rT/lippertzPy"
+Issues = "https://github.com/R0g3rT/lippertzPy/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
