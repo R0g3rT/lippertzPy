@@ -30,6 +30,7 @@ class _ColorFormatter(_DisplayLevelFormatter):
         "RUN": "94", # Blue
         "DEBUG": "90", # Gray
         "INFO": "0", # White
+        "CRITICAL": "95", # Magenta
     }
 
     def format(self, record: logging.LogRecord) -> str:
