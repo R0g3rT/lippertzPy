@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "lippertzpy"
 version = "0.1.5"
 description = "Python helpers for the Jifeline partner API and logging"
-readme = "README.md"
+readme = "readme/README.md"
 requires-python = ">=3.10"
 authors = [
     { name = "Robert Lippert" }
