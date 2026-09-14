@@ -6,7 +6,7 @@ A lightweight Python library for the Jifeline Partner API and local logging.
 
 ## Language
 
-- [README German](README-de.md)
+- [README German](/readme/README-de.md)
 
 ## Features
 
@@ -41,6 +41,7 @@ Update:
 ```bash
 python -m pip install --upgrade lippertzpy
 ```
+
 
 To uninstall:
 

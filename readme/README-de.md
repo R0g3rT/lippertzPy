@@ -36,7 +36,13 @@ cd lippertzpy
 python -m pip install -
 ```
 
-Deinstallation:
+Aktualisieren:
+
+```bash
+python -m pip install --upgrade lippertzpy
+```
+
+## Deinstallation:
 
 ```bash
 py -m pip uninstall lippertzpy
