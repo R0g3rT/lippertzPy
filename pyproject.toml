@@ -4,19 +4,23 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lippertzpy"
-version = "0.1.6"
+version = "0.1.6.1"
 description = "Python helpers for the Jifeline partner API and logging"
 readme = "readme/README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.7"
 authors = [
     { name = "Robert Lippert" }
 ]
 keywords = ["jifeline", "api", "logging", "automation"]
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+
     "Operating System :: OS Independent",
 ]
 dependencies = [

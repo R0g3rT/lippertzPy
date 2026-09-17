@@ -87,7 +87,6 @@ The second argument of `post` and `put` is the payload to send.
 - `INFO`
 - `WARNING`
 - `ERROR`
-- `DEBUG`
 - `CRITICAL`
 
 Log files are automatically stored in a `log` folder next to the Python script that started the application.

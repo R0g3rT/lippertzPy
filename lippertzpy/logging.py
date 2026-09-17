@@ -28,7 +28,6 @@ class _ColorFormatter(_DisplayLevelFormatter):
         "WARNING": "93", # Yellow
         "SUCCESS": "92", # Green
         "RUN": "94", # Blue
-        "DEBUG": "90", # Gray
         "INFO": "0", # White
         "CRITICAL": "95", # Magenta
     }

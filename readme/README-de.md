@@ -87,7 +87,6 @@ Das zweite Argument von `post` und `put` enthält die zu sendenden Daten.
 - `INFO`
 - `WARNING`
 - `ERROR`
-- `DEBUG`
 - `CRITICAL`
 
 Die Protokolldateien werden automatisch im Ordner `log` neben dem gestarteten Python-Skript gespeichert.
