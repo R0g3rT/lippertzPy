@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lippertzpy"
-version = "0.1.6.1"
+version = "0.1.7"
 description = "Python helpers for the Jifeline partner API and logging"
 readme = "readme/README.md"
 requires-python = ">=3.7"
@@ -24,8 +24,12 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "python-dotenv>=1.0",
-    "requests>=2.31",
+    "python-dotenv",
+    "requests",
+    "certifi",
+    "charset-normalizer",
+    "idna",
+    "urllib3",
 ]
 
 [project.urls]
