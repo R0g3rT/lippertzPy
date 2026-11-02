@@ -1,35 +1,31 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "lippertzpy"
-version = "0.1.7"
+version = "0.2.0"
 description = "Python helpers for the Jifeline partner API and logging"
 readme = "readme/README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     { name = "Robert Lippert" }
 ]
 keywords = ["jifeline", "api", "logging", "automation"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "liplog>=0.2.0",
     "python-dotenv",
     "requests",
-    "certifi",
-    "charset-normalizer",
-    "idna",
-    "urllib3",
 ]
 
 [project.urls]

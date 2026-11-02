@@ -19,7 +19,6 @@ venv/
 !.env.example
 log/
 *.log
-tests/
 
 # Editors and operating systems
 .idea/

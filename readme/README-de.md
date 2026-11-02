@@ -4,7 +4,7 @@ Eine kleine Python-Bibliothek für die Jifeline Partner API und lokales Logging.
 
 > Vereinfachte API-Anfragen, zentrale Zugangsdaten und automatische Logdateien direkt neben deinen Scripts.
 
-## Language
+## Sprache
 
 - [README English](README.md)
 
@@ -12,8 +12,9 @@ Eine kleine Python-Bibliothek für die Jifeline Partner API und lokales Logging.
 
 - Einfacher Zugriff auf die Jifeline Partner API
 - Hilfsfunktionen für `get`, `post`, `put` und `delete`
-- Lokales Logging für Debugging und Überwachung
-- Ideal für Skripte und kleine Automationen
+- OAuth-Token wird zwischengespeichert und bis kurz vor Ablauf wiederverwendet
+- Fehlermeldungen der API landen in der ausgelösten Exception
+- Lokales Logging über [liplog](https://github.com/R0g3rT/liplog)
 
 ## Voraussetzungen
 
@@ -22,18 +23,16 @@ Eine kleine Python-Bibliothek für die Jifeline Partner API und lokales Logging.
 
 ## Installation
 
-Lade den Quellcode herunter und installiere die Bibliothek mit:
+Über PyPI:
 
 ```bash
-py -m pip install .
+python -m pip install lippertzpy
 ```
 
-Oder direkt aus GitHub:
+Direkt aus GitHub:
 
 ```bash
-py -m pip install git+https://github.com/R0g3rT/lippertzPy.git
-cd lippertzpy
-python -m pip install -
+python -m pip install git+https://github.com/R0g3rT/lippertzPy.git
 ```
 
 Aktualisieren:
@@ -42,51 +41,56 @@ Aktualisieren:
 python -m pip install --upgrade lippertzpy
 ```
 
-## Deinstallation:
+Deinstallieren:
 
 ```bash
-py -m pip uninstall lippertzpy
+python -m pip uninstall lippertzpy
 ```
 
 ## Konfiguration
 
-Erstelle eine `.env`-Datei in deinem Projektordner oder neben deinem Script und trage deine Zugangsdaten ein:
+Erstelle eine `.env`-Datei im selben Ordner wie das gestartete Python-Script und trage deine Zugangsdaten ein:
 
 ```dotenv
 client_id=your_client_id
 client_secret=your_client_secret
 ```
 
-Wenn vorhanden, kannst du auch die Beispiel-Datei kopieren.
+Alternativ kannst du `client_id` und `client_secret` als Umgebungsvariablen setzen. Vorhandene Umgebungsvariablen haben Vorrang vor der `.env`-Datei.
 
 ## Schnellstart
 
 ```python
 from lippertzpy import get, post, write_log
 
-write_log("API client gestartet", "INFO")
-write_log("Wichtige Warnung", "WARNING")
-write_log("Ein Fehler ist aufgetreten", "ERROR")
-result = get("endpoint")
-result = post("endpoint", {"data": data})
+write_log("API client gestartet", "RUN")
+
+ticket = get("tickets/tickets/123")
+result = post("endpoint", {"key": "value"})
+
+write_log("Fertig", "SUCCESS")
 ```
 
 ## Unterstützte API-Methoden
 
-Die Bibliothek unterstützt folgende HTTP-Methoden:
+- `get(endpoint)`
+- `post(endpoint, data)`
+- `put(endpoint, data)`
+- `delete(endpoint)`
 
-- `get`
-- `post`
-- `put`
-- `delete`
-
-Das zweite Argument von `post` und `put` enthält die zu sendenden Daten.
+`data` wird als JSON gesendet. Leere Antworten (z. B. `204 No Content`) ergeben `{}`.
+Bei HTTP-Fehlern wird ein `requests.HTTPError` mit Statuscode und Antworttext der API ausgelöst.
 
 ## Logging
 
-- `INFO`
-- `WARNING`
-- `ERROR`
-- `CRITICAL`
+`write_log` und `setup_logging` kommen aus [liplog](https://github.com/R0g3rT/liplog).
 
-Die Protokolldateien werden automatisch im Ordner `log` neben dem gestarteten Python-Skript gespeichert.
+Unterstützte Level: `RUN`, `INFO`, `SUCCESS`, `WARNING`, `ERROR`, `CRITICAL`. Ein unbekanntes Level löst einen `ValueError` aus.
+
+Die Logdateien landen im Ordner `logs` neben dem gestarteten Python-Script. Der Ordner wird beim ersten Log-Eintrag angelegt.
+
+## Änderungen in 0.2.0
+
+- Logging läuft jetzt über `liplog`: der Log-Ordner heißt `logs` (vorher `log`)
+- `write_log(message, level="INFO")`: die Parameter `retries` und `delay_ms` sind entfallen
+- Benötigt Python 3.10 oder neuer
