@@ -85,9 +85,13 @@ Bei HTTP-Fehlern wird ein `requests.HTTPError` mit Statuscode und Antworttext de
 
 `write_log` und `setup_logging` kommen aus [liplog](https://github.com/R0g3rT/liplog).
 
-Unterstützte Level: `RUN`, `INFO`, `SUCCESS`, `WARNING`, `ERROR`, `CRITICAL`. Ein unbekanntes Level löst einen `ValueError` aus.
+Unterstützte Level: `DEBUG`, `RUN`, `INFO`, `SUCCESS`, `WARNING`, `ERROR`, `CRITICAL`. Ein unbekanntes Level löst einen `ValueError` aus.
 
-Die Logdateien landen im Ordner `logs` neben dem gestarteten Python-Script. Der Ordner wird beim ersten Log-Eintrag angelegt.
+Die Logdateien landen in `logs/<script>/` neben dem gestarteten Python-Script. Der Ordner wird beim ersten Log-Eintrag angelegt.
+
+## Änderungen in 0.3.0
+
+- Benötigt `liplog>=0.3.0`: Logdateien liegen in `logs/<script>/`, `DEBUG` wird unterstützt, Konsolenausgabe geht nach stdout
 
 ## Änderungen in 0.2.0
 
